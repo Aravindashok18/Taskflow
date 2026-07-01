@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Kanban Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">📋 TaskFlow</h1>
+                <p class="app-subtitle">Organize your tasks with ease</p>
+            </div>
+            <div class="header-controls">
+                <button id="theme-toggle" class="theme-btn" title="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Controls -->
+        <div class="controls-section">
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    id="task-input" 
+                    placeholder="Add a new task..." 
+                    class="task-input"
+                >
+                <button id="add-btn" class="add-btn">+ Add Task</button>
+            </div>
+            <div class="filter-group">
+                <button class="filter-btn active" data-priority="all">All</button>
+                <button class="filter-btn" data-priority="high">High</button>
+                <button class="filter-btn" data-priority="medium">Medium</button>
+                <button class="filter-btn" data-priority="low">Low</button>
+            </div>
+        </div>
+
+        <!-- Kanban Board -->
+        <div class="kanban-board">
+            <!-- To Do Column -->
+            <div class="kanban-column">
+                <div class="column-header">
+                    <h2 class="column-title">📝 To Do</h2>
+                    <span class="task-count" id="todo-count">0</span>
+                </div>
+                <div class="column-content" id="todo-column" data-status="todo">
+                    <!-- Tasks will be dynamically added here -->
+                </div>
+            </div>
+
+            <!-- In Progress Column -->
+            <div class="kanban-column">
+                <div class="column-header">
+                    <h2 class="column-title">⚡ In Progress</h2>
+                    <span class="task-count" id="progress-count">0</span>
+                </div>
+                <div class="column-content" id="progress-column" data-status="progress">
+                    <!-- Tasks will be dynamically added here -->
+                </div>
+            </div>
+
+            <!-- Done Column -->
+            <div class="kanban-column">
+                <div class="column-header">
+                    <h2 class="column-title">✅ Done</h2>
+                    <span class="task-count" id="done-count">0</span>
+                </div>
+                <div class="column-content" id="done-column" data-status="done">
+                    <!-- Tasks will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
